@@ -9,7 +9,7 @@ function StockList() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/stocks/${category}`)
+        axios.get(`https://stock-analysis-backend-flame.vercel.app/api/stocks/${category}`)
             .then(res => {
                 console.log('Fetched stocks:', res.data);
                 setStocks(res.data);
