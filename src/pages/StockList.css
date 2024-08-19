@@ -1,0 +1,63 @@
+/* src/pages/StockList.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #d7f0f4; 
+}
+
+.stock-list {
+    margin: 0;
+    padding: 10px;
+    background-color: #d7f0f4; 
+    border-radius: 8px; 
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.stock-table {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; 
+    gap: 10px;
+    border-collapse: collapse;
+}
+
+.stock-header {
+    display: contents;
+    font-weight: bold;
+    background-color: #007BFF; 
+    color: rgb(12, 12, 12);
+    text-align: center;
+}
+
+.stock-cell {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.stock-row {
+    display: contents;
+}
+
+.stock-row:nth-child(even) .stock-cell {
+    background-color: #f9f9f9; 
+}
+
+.stock-row:hover .stock-cell {
+    background-color: #f1f1f1; 
+}
+
+p {
+    color: red;
+    text-align: center;
+}
