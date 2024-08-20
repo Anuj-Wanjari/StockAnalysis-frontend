@@ -1,4 +1,4 @@
-//C:\Users\anujw\OneDrive\Desktop\StockAnalysis\frontend\src\components\Navbar.js
+// C:\Users\anujw\OneDrive\Desktop\StockAnalysis\frontend\src\components\Navbar.js
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
@@ -10,6 +10,7 @@ function Navbar() {
                 <Link to="/">Home</Link>
                 <Link to="/stocks">Stock</Link>
                 <Link to="/sectors">Sector</Link>
+                <Link to="/learn">Learn</Link>
             </div>
         </nav>
     );

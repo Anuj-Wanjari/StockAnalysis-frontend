@@ -1,70 +1,124 @@
-/* src/pages/StockPage.css */
+/* Global Styles */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #d7f0f4; 
-}
-
-.stock-page {
-    min-height: 100vh; 
-    padding: 0; 
-    background-color: #d7f0f4; 
+    background-color: #d7f0f4; /* Light blue background */
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
 
-.card-container {
+/* Stock Page Container */
+.stock-page {
+    min-height: 100vh; /* Ensure full viewport height */
+    padding: 20px; /* Added padding for better spacing */
+    background-color: #d7f0f4; /* Match HomePage background color */
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Title Styling */
+h2 {
+    margin-bottom: 30px;
+    color: #007BFF; /* Bootstrap Blue */
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limit the max-width for better layout on large screens */
+    padding: 0 20px; /* Added padding for better layout */
+}
+
+/* Stock Card */
 .stock-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     overflow: hidden;
-    width: 300px;
+    width: 100%;
+    max-width: 300px; /* Ensure consistent width */
     text-align: left;
     text-decoration: none;
-    color: #333;
+    color: #333; /* Dark text color */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stock-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
+/* Stock Image */
 .stock-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintain image aspect ratio */
 }
 
+/* Stock Card Title */
 .stock-card h3 {
     margin: 15px 0 10px;
     text-align: center;
     font-size: 1.5em;
-    color: #007BFF; 
+    color: #007BFF; /* Bootstrap Blue */
+    font-weight: bold;
 }
 
+/* Stock Card List */
 .stock-card ul {
-    padding: 0 15px 15px;
+    padding: 0 15px 15px; /* Padding for proper spacing */
     list-style-type: disc;
     margin: 0;
     font-size: 1em;
-    line-height: 1.6;
-    color: #3a3939;
+    line-height: 1.6; /* Better readability */
+    color: #3a3939; /* Dark gray text color */
 }
 
+/* Stock Card List Item */
 .stock-card ul li {
     margin-bottom: 10px;
 }
 
-h2 {
-    margin-bottom: 30px;
-    color: #007BFF;
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.popup-buttons {
+    margin-top: 20px;
+}
+
+.popup-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }

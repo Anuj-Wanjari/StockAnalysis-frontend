@@ -1,4 +1,4 @@
-//C:\Users\anujw\OneDrive\Desktop\StockAnalysis\frontend\src\pages\StockPage.js
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './StockPage.css'; 
 
@@ -7,8 +7,38 @@ import niftyMidcapImage from '../images/niftyMidcap.jpg';
 import niftySmallcapImage from '../images/niftySmallcap.jpg';
 
 function StockPage() {
+    const [showPopup, setShowPopup] = useState(false);
+    const [hasPopupBeenShown, setHasPopupBeenShown] = useState(false);
+
+    useEffect(() => {
+        if (!hasPopupBeenShown) {
+            setShowPopup(true);
+            setHasPopupBeenShown(true);
+        }
+    }, [hasPopupBeenShown]);
+
+    const handlePopupClose = () => {
+        setShowPopup(false);
+    };
+
+    const handleLearnNow = () => {
+        window.location.href = '/learn'; 
+    };
+
     return (
         <div className="stock-page">
+            {showPopup && (
+                <div className="popup-overlay">
+                    <div className="popup">
+                        <h1 style={{ color: '#ff0000' }}>Alert!!</h1>
+                        <h2>Learn how to select Stock from list!</h2>
+                        <div className="popup-buttons">
+                            <button onClick={handleLearnNow}>Learn Now</button>
+                            <button onClick={handlePopupClose}>Ok</button>
+                        </div>
+                    </div>
+                </div>
+            )}
             <h2>Sector Specific Stocks</h2>
             <div className="card-container">
                 <Link to="/stocks/nifty50" className="stock-card">
